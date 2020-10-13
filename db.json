@@ -1,0 +1,18 @@
+{
+  "topics": [
+    {
+      "id": "1",
+      "topic": "React"
+    }
+  ],
+
+  "cards": [
+    {
+      "id": "1",
+      "question": "What is the difference between a class and functional component?",
+      "answer": "A class component has state and lifecycle methods associated with it.  Functional components are functions that accept props as arguments and returns a React element.",
+      "focus": false,
+      "topicId": 1
+    }
+  ]
+}
