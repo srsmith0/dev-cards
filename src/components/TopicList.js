@@ -1,31 +1,38 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { getTopics } from "../actions";
+import { getTopics, resetCards } from "../actions";
+import NewTopicForm from "./TopicForm";
 
-const TopicList = (props) => {
-  const { getTopics, topics } = props;
 
-  //have to add a dependency. or figure out a way around it
-  useEffect(() => {
-    getTopics();
-  }, []);
+class TopicList extends React.Component {
 
-  const renderTopicList = () => {
-    return topics.map((t) => (
+  componentDidMount(){
+    this.props.getTopics();
+    this.props.resetCards();
+  }
+  
+  renderTopicList = () => {
+    return this.props.topics.map((t) => (
       <Link to={`/topics/${t.id}`} key={t.id}>
         <div>{t.topic}</div>
       </Link>
     ));
   };
-
-  return <div>{renderTopicList()}</div>;
-};
-
-const mapStateToProps = (state) => {
-  return {
-    topics: Object.values(state.topics),
+  
+  render() {
+    return (
+      <div>
+        {this.renderTopicList()}
+        <NewTopicForm getTopics={getTopics} />
+      </div>
+    );
+    };
   };
-};
+  const mapStateToProps = (state) => {
+    return {
+      topics: state.topics,
+    };
+  };
 
-export default connect(mapStateToProps, { getTopics })(TopicList);
+export default connect(mapStateToProps, { getTopics, resetCards })(TopicList);

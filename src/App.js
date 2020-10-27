@@ -9,7 +9,7 @@ const App = () => {
     <div className="ui container">
       <BrowserRouter>
         <Switch>
-          <Route path="/topics" exact component={TopicList} />
+          <Route path="/" exact component={TopicList} />
           <Route path="/topics/:id" exact component={TopicCards} />
         </Switch>
       </BrowserRouter>

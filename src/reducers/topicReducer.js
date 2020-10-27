@@ -1,10 +1,9 @@
-import _ from "lodash";
 import { GET_TOPICS } from "../actions/types";
 
-export default (state = {}, action) => {
+export default (state = [], action) => {
   switch (action.type) {
     case GET_TOPICS:
-      return { ...state, ..._.mapKeys(action.payload, "id") };
+      return action.payload;
     default:
       return state;
   }
