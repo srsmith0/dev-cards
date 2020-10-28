@@ -11,10 +11,6 @@
     {
       "id": "3",
       "topic": "Ruby"
-    },
-    {
-      "topic": "New Topic",
-      "id": "1XAC-4F"
     }
   ],
   "cards": [
@@ -22,7 +18,6 @@
       "id": "1",
       "question": "What is the difference between a class and functional component?",
       "answer": "A class component has state and lifecycle methods associated with it.  Functional components are functions that accept props as arguments and returns a React element.",
-      "focus": false,
       "showAnswer": false,
       "topicId": "1"
     },
@@ -30,7 +25,6 @@
       "id": "2",
       "question": "What is the difference between a class and functional component?",
       "answer": "A class component has state and lifecycle methods associated with it.  Functional components are functions that accept props as arguments and returns a React element.",
-      "focus": false,
       "showAnswer": false,
       "topicId": "2"
     },
@@ -38,30 +32,20 @@
       "id": "3",
       "question": "What is the difference between a class and functional component???",
       "answer": "A class component has state and lifecycle methods associated with it.  Functional components are functions that accept props as arguments and returns a React element.",
-      "focus": false,
       "showAnswer": false,
       "topicId": "1"
     },
     {
       "question": "Is this a test?",
-      "answer": "Yes",
+      "answer": "yep",
       "topicId": "1",
       "id": "aKYBD7A"
-    },
-    {
-      "question": "Test test test",
-      "answer": "Hell yeah it is!",
-      "topicId": "1",
-      "showAnswer": false,
-      "focus": false,
-      "id": "Xl3D1eV"
     },
     {
       "question": "Ruby",
       "answer": "Ruby yes",
       "topicId": "3",
       "showAnswer": false,
-      "focus": false,
       "id": "Jz_bX-G"
     },
     {
@@ -69,7 +53,6 @@
       "answer": "dsfds",
       "topicId": "3",
       "showAnswer": false,
-      "focus": false,
       "id": "qm6D5p-"
     },
     {
@@ -77,38 +60,7 @@
       "answer": "kdjksf",
       "topicId": "3",
       "showAnswer": false,
-      "focus": false,
       "id": "4sY7od7"
-    },
-    {
-      "question": "Test card in new topic",
-      "answer": "it worked",
-      "topicId": "1XAC-4F",
-      "showAnswer": false,
-      "focus": false,
-      "id": "jhhPskf"
-    }
-  ],
-  "focus": [
-    {
-      "id": "1",
-      "cardId": "3"
-    },
-    {
-      "id": "3",
-      "question": "What is the difference between a class and functional component???",
-      "answer": "A class component has state and lifecycle methods associated with it.  Functional components are functions that accept props as arguments and returns a React element.",
-      "focus": false,
-      "showAnswer": false,
-      "topicId": "1"
-    },
-    {
-      "question": "Is this a test?",
-      "answer": "dsfds",
-      "topicId": "3",
-      "showAnswer": false,
-      "focus": false,
-      "id": "qm6D5p-"
     }
   ]
 }
