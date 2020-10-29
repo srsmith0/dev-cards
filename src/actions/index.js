@@ -1,5 +1,14 @@
 import api from "../apis/cards";
-import { GET_TOPICS, GET_CARDS, ADD_TO_FOCUS, GET_FOCUS, TOGGLE_ANSWER, CORRECT_ANSWER, RESET_CARDS, ADD_CARD } from "./types";
+import { 
+  GET_TOPICS, 
+  GET_CARDS, 
+  ADD_TO_FOCUS, 
+  GET_FOCUS, 
+  TOGGLE_ANSWER, 
+  CORRECT_ANSWER, 
+  RESET_CARDS, 
+  ADD_CARD, 
+  DELETE_CARD } from "./types";
 
 export const getTopics = () => async (dispatch) => {
   const res = await api.get("/topics");
@@ -22,6 +31,8 @@ export const resetCards = () => {
 }
 
 export const correctAnswer = id => ({type: CORRECT_ANSWER, payload: id})
+
+export const deleteCard = id => ({type: DELETE_CARD, payload: id})
 
 export const toggleAnswer = id => ({type: TOGGLE_ANSWER, payload: id})
 

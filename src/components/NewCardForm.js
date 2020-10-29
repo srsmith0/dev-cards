@@ -12,7 +12,6 @@ const NewCardForm = ({topicId, getCards}) => {
     answer,
     topicId,
     showAnswer: false,
-    focus: false,
   }
 
   const onSubmit = async (e) => {

@@ -1,4 +1,4 @@
-import { GET_CARDS, TOGGLE_ANSWER, CORRECT_ANSWER, RESET_CARDS, ADD_CARD } from "../actions/types";
+import { GET_CARDS, TOGGLE_ANSWER, CORRECT_ANSWER, RESET_CARDS, ADD_CARD, DELETE_CARD } from "../actions/types";
 
 
 
@@ -9,6 +9,8 @@ export default (state = [], action) => {
     case ADD_CARD:
       return [...state, action.payload];
     case CORRECT_ANSWER:
+      return state.filter(card => card.id !== action.payload);
+    case DELETE_CARD:
       return state.filter(card => card.id !== action.payload);
     case TOGGLE_ANSWER:
       return state.map( card => {
