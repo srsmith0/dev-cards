@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux';
 import api from "../apis/cards";
 import { getTopics } from "../actions"
+import { Button, Icon, IconButton } from '@material-ui/core';
 
 const NewTopicForm = ({getTopics}) => {
   const [topic, setTopic] = useState('')
+  const [ showInput, setShowInput] = useState(false)
   
   const newTopic = {
     topic
@@ -20,17 +22,20 @@ const NewTopicForm = ({getTopics}) => {
   const topicFormInput = () => {
     return (
     <div>
-    <form onSubmit={onSubmit}>
-    <label>Topic:</label>
-     <input 
-    required
-    label="topic"
-    name="topic"
-    value={topic}
-    onChange={(e) => setTopic(e.target.value)}
-    />
-   <button>Add</button>
-   </form>
+      <IconButton style={{color: "green"}} onClick={() => setShowInput(!showInput)}><Icon fontSize="large">add_circle</Icon></IconButton>
+      {showInput ? 
+       <form onSubmit={onSubmit}>
+       <label>Topic:</label>
+        <input 
+       required
+       label="topic"
+       name="topic"
+       value={topic}
+       onChange={(e) => setTopic(e.target.value)}
+       />
+      </form>   
+      : null
+    }
    </div>
   )
 }

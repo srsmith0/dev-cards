@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux';
 import api from "../apis/cards";
 import { getCards } from "../actions"
+import { Button, Icon, IconButton } from '@material-ui/core';
 
 const NewCardForm = ({topicId, getCards}) => {
   const [question, setQuestion] = useState('')
   const [ answer, setAnswer] = useState('')
+  const [showInput, setShowInput] = useState(false)
   
   const newCard = {
     question,
@@ -14,36 +16,45 @@ const NewCardForm = ({topicId, getCards}) => {
     showAnswer: false,
   }
 
-  const onSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     await api.post(`topics/${topicId}/cards`, newCard)
     setQuestion('')
     setAnswer('')
+    setShowInput(!showInput)
     getCards(topicId)
   }
 
   const formInput = () => {
     return (
-    <div>
-    <form onSubmit={onSubmit}>
-    <label>Question:</label>
-     <input 
-    required
-    label="question"
-    name="question"
-    value={question}
-    onChange={(e) => setQuestion(e.target.value)}
-    />
-    <label id="answer">Answer:</label>
-    <input 
-    required
-    label="answer"
-    name="answer"
-    value={answer}
-    onChange={(e) => setAnswer(e.target.value)}
-    />
-   <button>Add</button>
+    <div className="card-form">
+      <IconButton style={{color: showInput ? "coral" : "green"}} onClick={() => setShowInput(!showInput)}><Icon fontSize="large">{showInput ? "remove_circle" : "add_circle"}</Icon></IconButton>
+    {showInput ? 
+    <form onSubmit={handleSubmit}>
+    <div className="card-input">
+    <label>Question: </label>
+     <textarea
+      required
+      label="question"
+      name="question"
+      value={question}
+      onChange={(e) => setQuestion(e.target.value)}
+      />
+    </div>
+    <br />
+    <div className="card-input">
+    <label id="answer">Answer: </label>
+      <textarea 
+      required
+      label="answer"
+      name="answer"
+      value={answer}
+      onChange={(e) => setAnswer(e.target.value)}
+      />
+    </div>  
+    <Button type="submit" style={{ color: "green"}}>Add Card</Button>
    </form>
+   : null }
    </div>
   )
 }

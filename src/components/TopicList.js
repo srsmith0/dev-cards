@@ -23,7 +23,9 @@ class TopicList extends React.Component {
     return this.props.topics.map((t) => {
       return (
         <div key={t.id}>
-      <Link to={`/topics/${t.id}`}>
+      <Link to={{
+        pathname: `/topics/${t.id}`,
+        state: {topic: t.topic}}}>
         <div>{t.topic}</div>
       </Link>
       <Button onClick={() => this.deleteTopic(t.id)}>Delete</Button>
@@ -35,8 +37,9 @@ class TopicList extends React.Component {
   render() {
     return (
       <div>
-        {this.renderTopicList()}
+        <h1>Topics</h1>
         <NewTopicForm getTopics={getTopics} />
+        {this.renderTopicList()}
         <Link to="/focus">Focus List</Link>
       </div>
     );

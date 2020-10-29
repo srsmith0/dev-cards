@@ -1,6 +1,33 @@
-.cards-view {
-  display: flex;
-}
+@import url("https://fonts.googleapis.com/css2?family=Commissioner&display=swap");
 
 .card-container {
+  width: 33%;
+}
+
+.card {
+  justify-content: center;
+  height: 18em;
+  object-fit: contain;
+  border: solid 1px grey;
+}
+
+.card-content {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.card-crud {
+  display: flex;
+  justify-content: flex-end;
+}
+
+p {
+  font-family: "Commissioner", sans-serif;
 }
