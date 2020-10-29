@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {getCards} from '../actions'
 import ShowCard from "./ShowCard";
 import NewCardForm from "./NewCardForm";
+import { Button } from "@material-ui/core";
 
 class TopicCards extends React.Component {
 
@@ -16,7 +17,8 @@ class TopicCards extends React.Component {
       const {getCards} = this.props;
   return (
     <>
-    <button onClick={() => this.props.getCards(id)}>Reset Cards</button>
+    <Button onClick={() => this.props.history.push('/')}>Go Back</Button>
+    <Button onClick={() => this.props.getCards(id)}>Reset Cards</Button>
     <ShowCard cards={this.props.cards} />
     <NewCardForm topicId={this.props.match.params.id} getCards={getCards}/>
     </>

@@ -16,7 +16,7 @@ const ShowCard = ({ toggleAnswer, cards, correctAnswer, addToFocus, deleteCard }
     await api.delete(`/cards/${id}`);
   }
 
-  const renderCard = () => {
+  const renderCards = () => {
       return (
         cards.map((card => (
         <div key={card.id} className="card-container">
@@ -37,7 +37,7 @@ const ShowCard = ({ toggleAnswer, cards, correctAnswer, addToFocus, deleteCard }
       );
   };
 
-  return <div className="cards-view">{renderCard()}</div>;
+  return <div className="cards-view">{renderCards()}</div>;
 };
 
 export default connect(null, { correctAnswer, toggleAnswer, addToFocus, deleteCard })(ShowCard)

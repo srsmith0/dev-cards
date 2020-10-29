@@ -37,6 +37,7 @@ class TopicList extends React.Component {
       <div>
         {this.renderTopicList()}
         <NewTopicForm getTopics={getTopics} />
+        <Link to="/focus">Focus List</Link>
       </div>
     );
     };
