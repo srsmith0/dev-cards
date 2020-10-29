@@ -8,7 +8,8 @@ import {
   CORRECT_ANSWER, 
   RESET_CARDS, 
   ADD_CARD, 
-  DELETE_CARD } from "./types";
+  DELETE_CARD, 
+  CLEAR_FOCUS } from "./types";
 
 export const getTopics = () => async (dispatch) => {
   const res = await api.get("/topics");
@@ -39,3 +40,5 @@ export const toggleAnswer = id => ({type: TOGGLE_ANSWER, payload: id})
 export const addToFocus = card => ({type: ADD_TO_FOCUS, payload: card})
 
 export const getFocus = () => ({type: GET_FOCUS})
+
+export const clearFocus = () => ({type: CLEAR_FOCUS})
