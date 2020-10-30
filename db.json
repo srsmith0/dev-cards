@@ -1,53 +1,73 @@
 {
   "topics": [
     {
-      "id": "2",
-      "topic": "JavaScript"
-    },
-    {
       "topic": "React",
       "id": "o0QCBRE"
-    },
-    {
-      "topic": "Ruby",
-      "id": "0rR4g6j"
     }
   ],
   "cards": [
     {
-      "id": "2",
-      "question": "What is the difference between a class and functional component?",
-      "answer": "A class component has state and lifecycle methods associated with it.  Functional components are functions that accept props as arguments and returns a React element.",
-      "showAnswer": false,
-      "topicId": "2"
-    },
-    {
-      "question": "very long answer",
-      "answer": " dsff",
-      "topicId": "2",
-      "showAnswer": false,
-      "id": "3GycpTw"
-    },
-    {
-      "question": "new card",
-      "answer": "jkl",
-      "topicId": "2",
-      "showAnswer": false,
-      "id": "xuxo22z"
-    },
-    {
-      "question": "sdfds",
-      "answer": "dsfdsf",
+      "question": "What is React?",
+      "answer": "A front-end JavaScript library developed by Facebook.  It uses a component based approach and used for developing complex and interactive web and mobile applications.",
       "topicId": "o0QCBRE",
       "showAnswer": false,
-      "id": "6wTJkKI"
+      "id": 1
     },
     {
-      "question": "sdfds",
-      "answer": "dsf",
+      "question": "What are the features of React?",
+      "answer": "It uses a virtual DOM, server side rendering, and follows unidirectional data flow.",
       "topicId": "o0QCBRE",
       "showAnswer": false,
-      "id": "q3wgXiq"
+      "id": 2
+    },
+    {
+      "question": "What are the advantages of React?",
+      "answer": "It increases the application's performance, it can be used on the client and server side, JSX allows for better code readability, easily integrates with other frameworks, and it is easy to write UI test cases.",
+      "topicId": "o0QCBRE",
+      "showAnswer": false,
+      "id": 3
+    },
+    {
+      "question": "What are the limitations of React?",
+      "answer": "It is just a library (not a full framework), the library is large and takes time to understand, and coding can become complex using inline templating and JSX.",
+      "topicId": "o0QCBRE",
+      "showAnswer": false,
+      "id": 4
+    },
+    {
+      "question": "What is JSX?",
+      "answer": "JavaScript XML. The syntax is similar to HTML and React uses JSX to render the information to a webpage.",
+      "topicId": "o0QCBRE",
+      "showAnswer": false,
+      "id": 5
+    },
+    {
+      "question": "What is the virtual DOM?",
+      "answer": "A JavaScript object which originally is a copy of the real DOM. It is a node tree that lists the elements, their attributes and content as Objects and their properties. React’s render function creates a node tree out of the React components. It then updates this tree in response to the mutations in the data model.",
+      "topicId": "o0QCBRE",
+      "showAnswer": false,
+      "id": 6
+    },
+    {
+      "question": "How is the DOM updated?",
+      "answer": "Underlying data changes, the entire UI is re-rendered in the Virtual DOM.  Then the difference between the previous DOM representation and the new one is calculated. Once the calculations are complete, the real DOM will be updated with only the things that have changed.  ",
+      "topicId": "o0QCBRE",
+      "showAnswer": false,
+      "id": 7
+    },
+    {
+      "question": "What's the difference between a class and functional component?",
+      "answer": "A class-based component extends React's Component class and implements a render() method.  A functional component is stateless and returns the output to be rendered.  ",
+      "topicId": "o0QCBRE",
+      "showAnswer": false,
+      "id": 8
+    },
+    {
+      "question": "What are keys used for?",
+      "answer": "When rendering collections in React, a key is added to each repeated element to help React track the association between elements and data. The key should be a unique ID.",
+      "topicId": "o0QCBRE",
+      "showAnswer": false,
+      "id": 9
     }
   ]
 }

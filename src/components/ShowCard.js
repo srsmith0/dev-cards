@@ -2,14 +2,14 @@ import React from "react";
 import "../style/cardStyle.css";
 import { connect } from 'react-redux';
 import { toggleAnswer, correctAnswer, addToFocus } from "../actions";
-import { Button, Card, CardActions, CardContent, Icon } from "@material-ui/core";
+import { Button, Card, CardContent, Icon } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 const ShowCard = ({ toggleAnswer, card, correctAnswer, addToFocus, removeCard }) => {
 
   const renderCard = () => {
       return (
-          <Card className="card" key={card.id}>
+          <Card className="card">
           <div className="card-crud">
           {removeCard ? 
             <Link to={{

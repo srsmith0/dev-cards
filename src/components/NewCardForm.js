@@ -28,7 +28,7 @@ const NewCardForm = ({topicId, getCards}) => {
   const formInput = () => {
     return (
     <div className="card-form">
-      <IconButton style={{color: showInput ? "coral" : "green"}} onClick={() => setShowInput(!showInput)}><Icon fontSize="medium">{showInput ? "remove_circle" : "add_circle"}</Icon></IconButton>
+      <IconButton style={{color: showInput ? "coral" : "green"}} onClick={() => setShowInput(!showInput)}><Icon fontSize="small">{showInput ? "remove_circle" : "add_circle"}</Icon></IconButton>
     {showInput ? 
     <form onSubmit={handleSubmit}>
     <div className="card-input">
