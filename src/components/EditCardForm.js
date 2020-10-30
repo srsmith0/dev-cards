@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
+import "../style/editCardStyle.css";
 import api from "../apis/cards";
+import { Button } from '@material-ui/core';
+
 
 const EditCardForm = (props) => {
   const {question, answer, id, topicId } = props.location.state
@@ -8,7 +11,7 @@ const EditCardForm = (props) => {
 
   const content = {answer: editAnswer, question: editQuestion}
 
-  const onSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     await api.patch(`cards/${id}`, content)
     props.history.push(`/topics/${topicId}`)
@@ -16,26 +19,36 @@ const EditCardForm = (props) => {
 
   const formInput = () => {
     return (
-    <div>
-    <form onSubmit={onSubmit}>
-    <label>Question:</label>
-     <input 
+    <div className="edit-form">
+    <form onSubmit={handleSubmit}>
+    <div className="card-input">
+    <label>Question: </label>
+     <textarea 
     required
+    cols="40"
     label="question"
     name="question"
     value={editQuestion}
     onChange={(e) => setEditQuestion(e.target.value)}
     />
-    <label id="answer">Answer:</label>
-    <input 
+    </div>
+    <br />
+    <div className="card-input">
+    <label id="answer">Answer: </label>
+    <textarea 
     required
+    rows="10"
+    cols="40"
     label="answer"
     name="answer"
     value={editAnswer}
     onChange={(e) => setEditAnswer(e.target.value)}
     />
-   <button>Add</button>
+    </div>
+    <br />
+   <Button type="submit">Update</Button>
    </form>
+   <Button onClick={() => props.history.push(`/topics/${topicId}`)}>Go Back</Button>
    </div>
   )
 }

@@ -1,26 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Commissioner&display=swap");
 
-.card-container {
-  width: 33%;
-}
-
 .card {
   justify-content: center;
-  height: 18em;
-  object-fit: contain;
+  height: 21em;
+  width: 21em;
+  margin: 1em;
   border: solid 1px grey;
 }
 
-.card-content {
+.MuiCardContent-root {
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
+  height: 12em;
+  width: 18em;
+  text-align: center;
 }
 
 .card-buttons {
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 
 .card-crud {

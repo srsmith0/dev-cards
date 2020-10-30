@@ -5,24 +5,28 @@ import { toggleAnswer, correctAnswer, addToFocus } from "../actions";
 import { Button, Card, CardActions, CardContent, Icon } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
-const ShowCard = ({ toggleAnswer, card, correctAnswer, addToFocus, removeCard}) => {
+const ShowCard = ({ toggleAnswer, card, correctAnswer, addToFocus, removeCard }) => {
 
   const renderCard = () => {
       return (
-        <div key={card.id} className="card-container">
-          <Card className="card">
+          <Card className="card" key={card.id}>
           <div className="card-crud">
           {removeCard ? 
             <Link to={{
               pathname:`/edit/${card.id}`,
-              state:{id: card.id, question: card.question, answer: card.answer, topicId: card.topicId}
+              state:{ 
+                id: card.id, 
+                question: card.question, 
+                answer: card.answer, 
+                topicId: card.topicId
+              } 
             }}>
               <Icon>edit</Icon>
             </Link> 
             : null}
           {removeCard ? <Button onClick={() => removeCard(card.id)}><Icon style={{color: "tomato"}}>delete</Icon></Button> : null}
           </div>
-          <CardContent className="card-content">
+          <CardContent>
           <p>{card.showAnswer ? card.answer : card.question}</p>
           </CardContent>
           <div className="card-buttons">
@@ -35,11 +39,10 @@ const ShowCard = ({ toggleAnswer, card, correctAnswer, addToFocus, removeCard}) 
             : null}
           </div>
           </Card>
-        </div>
       );
   };
 
-  return <div className="cards-view">{renderCard()}</div>;
+  return renderCard();
 };
 
 export default connect(null, { correctAnswer, toggleAnswer, addToFocus })(ShowCard)

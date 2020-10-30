@@ -1,8 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Commissioner&display=swap");
-
 .topic-header {
   font-family: "Commissioner", sans-serif;
   text-align: center;
+  font-size: 3em;
 }
 
 .topic-card-buttons {
@@ -21,4 +20,5 @@
 .card-grid {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
 }

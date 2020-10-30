@@ -28,13 +28,14 @@ const NewCardForm = ({topicId, getCards}) => {
   const formInput = () => {
     return (
     <div className="card-form">
-      <IconButton style={{color: showInput ? "coral" : "green"}} onClick={() => setShowInput(!showInput)}><Icon fontSize="large">{showInput ? "remove_circle" : "add_circle"}</Icon></IconButton>
+      <IconButton style={{color: showInput ? "coral" : "green"}} onClick={() => setShowInput(!showInput)}><Icon fontSize="medium">{showInput ? "remove_circle" : "add_circle"}</Icon></IconButton>
     {showInput ? 
     <form onSubmit={handleSubmit}>
     <div className="card-input">
     <label>Question: </label>
      <textarea
       required
+      cols="30"
       label="question"
       name="question"
       value={question}
@@ -43,9 +44,11 @@ const NewCardForm = ({topicId, getCards}) => {
     </div>
     <br />
     <div className="card-input">
-    <label id="answer">Answer: </label>
+    <label>Answer: </label>
       <textarea 
       required
+      cols="30"
+      rows="8"
       label="answer"
       name="answer"
       value={answer}

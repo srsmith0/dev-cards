@@ -21,11 +21,11 @@ const NewTopicForm = ({getTopics}) => {
 
   const topicFormInput = () => {
     return (
-    <div>
-      <IconButton style={{color: "green"}} onClick={() => setShowInput(!showInput)}><Icon fontSize="large">add_circle</Icon></IconButton>
+    <div className="topic-form">
+      <IconButton style={{color: showInput ? "coral" : "green"}} onClick={() => setShowInput(!showInput)}><Icon fontSize="medium">{showInput ? "remove_circle" : "add_circle"}</Icon></IconButton>
       {showInput ? 
        <form onSubmit={onSubmit}>
-       <label>Topic:</label>
+       <label>Topic: </label>
         <input 
        required
        label="topic"
@@ -33,6 +33,7 @@ const NewTopicForm = ({getTopics}) => {
        value={topic}
        onChange={(e) => setTopic(e.target.value)}
        />
+       <Button type="submit" style={{ color: "green"}}>Add Topic</Button>
       </form>   
       : null
     }

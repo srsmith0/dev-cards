@@ -1,10 +1,11 @@
 import React from "react";
+import "../style/topicListStyle.css";
 import api from "../apis/cards";
 import { connect } from "react-redux";
-import { Button } from "@material-ui/core";
+import { Button, Icon } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { getTopics, resetCards } from "../actions";
-import NewTopicForm from "./TopicForm";
+import NewTopicForm from "./NewTopicForm";
 
 
 class TopicList extends React.Component {
@@ -22,13 +23,13 @@ class TopicList extends React.Component {
   renderTopicList = () => {
     return this.props.topics.map((t) => {
       return (
-        <div key={t.id}>
-      <Link to={{
-        pathname: `/topics/${t.id}`,
-        state: {topic: t.topic}}}>
-        <div>{t.topic}</div>
-      </Link>
-      <Button onClick={() => this.deleteTopic(t.id)}>Delete</Button>
+        <div key={t.id} className="single-topic">
+          <Link className="topic-link" to={{
+            pathname: `/topics/${t.id}`,
+            state: {topic: t.topic, }}}>
+          {t.topic}
+          </Link>
+      <Button onClick={() => this.deleteTopic(t.id)}><Icon style={{color: "tomato"}}>delete</Icon></Button>
       </div>
       )
     });
@@ -36,11 +37,11 @@ class TopicList extends React.Component {
   
   render() {
     return (
-      <div>
-        <h1>Topics</h1>
+      <div className="topic-page">
+        <h1 className="topic-header-main">Topics</h1>
         <NewTopicForm getTopics={getTopics} />
+        <Link className="focus-link" to="/focus"><p>Focus List</p></Link>
         {this.renderTopicList()}
-        <Link to="/focus">Focus List</Link>
       </div>
     );
     };

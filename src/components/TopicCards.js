@@ -9,6 +9,10 @@ import { Button } from "@material-ui/core";
 
 class TopicCards extends React.Component {
 
+  setTopicTitle = (id) => {
+    return this.props.topics.map(topic => topic.id === id ? topic.topic : null);
+  }
+
   componentDidMount() {
     this.props.getCards(this.props.match.params.id)
   }
@@ -28,7 +32,7 @@ class TopicCards extends React.Component {
       const {getCards} = this.props;
   return (
     <>
-    <h1 className="topic-header">{this.props.location.state.topic}</h1>
+    <h1 className="topic-header">{this.setTopicTitle(this.props.match.params.id)}</h1>
     <div className="topic-card-buttons">
     <Button onClick={() => this.props.history.push('/')}>Go Back</Button>
     <Button onClick={() => this.props.getCards(id)}>Reset Cards</Button>
@@ -45,6 +49,7 @@ class TopicCards extends React.Component {
 const mapStateToProps = (state) => {
   return {
     cards: state.cards,
+    topics: state.topics,
   };
 };
 
