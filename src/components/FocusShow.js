@@ -7,7 +7,7 @@ import ShowCard from "./ShowCard";
 
 class FocusShow extends React.Component {
   renderCards = (cards) => {
-    return cards.map(card => <ShowCard card={card} removeCard={this.removeCard} />)
+    return cards.map(card => <ShowCard key={card.id} card={card} removeCard={this.removeCard} />)
   }
 
   render() { 

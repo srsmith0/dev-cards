@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Commissioner&display=swap");
 
+body {
+  background-color: #fafafa;
+}
+
 .card {
+  background-color: #fdfdfd !important;
   justify-content: center;
   height: 21em;
   width: 21em;
