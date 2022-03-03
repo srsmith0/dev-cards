@@ -1,10 +1,7 @@
 # Welcome to Dev Cards!
 
-I created this to help prepare for applying to jobs. It is a simple flashcard application
-that uses a local JSON server to keep track of all created cards. Redux is used to keep
-track of cards you need to focus on in a study session. I have included a stack of React
-cards and will add more when I have time. If you would like to add topics and cards, please
-do and share!
+Dev Cards is a simple flashcard application that uses a local JSON server to keep track of all created 
+flash cards. Redux is used to keep track of cards you need to focus on in a study session.
 
 # Get Dev Cards
 
